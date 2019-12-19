@@ -1,0 +1,86 @@
+
+<html>
+	<head>
+		<title>Blog Site</title>
+		<link rel="stylesheet" type="text/css" href= "https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+		<link rel="stylesheet" type="text/css" href= "/stylesheets/app.css">
+		<style type="text/css">
+          body {
+            background-color: #FFFFFF;
+          }
+          .ui.menu .item img.logo {
+            margin-right: 1.5em;
+          }
+          .main.container {
+            margin-top: 7em;
+          }
+          .wireframe {
+            margin-top: 2em;
+          }
+          .ui.footer.segment {
+            margin: 5em 0em 0em;
+            padding: 5em 0em;
+          }
+          i.icon {
+            font-size: 2em;
+          }
+        </style>
+    </head>
+    <body>
+      
+  <div class="ui fixed inverted menu">
+    <div class="ui container">
+      <div href="#" class="header item">
+        <i class="code icon"></i>
+        Blog Site
+      </div>
+      <a href="/" class="item">Home</a>
+      <a href="/blogs/new" class="item">New Post</a>
+    </div>
+  </div>
+		
+
+
+
+
+
+
+
+
+<div class="ui main text container">
+   	<div class="ui huge header">Blog Site</div>
+    <div class="ui top attached segment">
+<div class="ui divided items">
+	<% blogs.forEach(function(blog){ %>
+	 <div class="item">
+	    <div class="image">
+	      <img src="<%= blog.image %>">
+	    </div>
+	    <div class="content">
+	      <a class="header"><%= blog.title %></a>
+	      <div class="meta">
+	        <span class="cinema"><%= blog.created.toDateString() %></span>
+	      </div>
+	      <div class="description">
+	        <p><%= blog.body.substring(0,100); %></p>
+	      </div>
+	      <div class="extra">
+	        <a href="/blogs/<%=blog._id %>" class="ui floated basic violet button">
+	          Read More
+	          <i class="right chevron icon"></i>
+	        </a>
+	      </div>
+	    </div>
+	  </div>
+	<% }); %>
+</div>
+</div>
+    
+  </div>
+
+
+
+
+
+	</body>
+</html>
